@@ -11,7 +11,7 @@ HelloWorldView.prototype.StartView = function () {
         modalManager.OpenModal(function (_modal) {
             console.log(_modal);
             _modal.SetTitle("Hello World");
-			json = "JSON";
+            json = "JSON";
             _modal.AppendText("モーダルサンプルー"+json);
 
         });
