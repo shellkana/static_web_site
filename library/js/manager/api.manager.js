@@ -15,7 +15,7 @@ ApiManager.prototype.ExecApi = function (_taskName, _postParam) {
         type: "POST",
         url: url,
         dataType: 'json',
-        data: { taskName:_taskName,json: postParam },
+        data: JSON.stringify({ TaskName:_taskName , json:postParam}),
     }).done
         (
         function (_json) {
