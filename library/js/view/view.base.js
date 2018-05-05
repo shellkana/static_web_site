@@ -11,7 +11,7 @@ ViewBase.prototype.StartView = function () {
 ViewBase.prototype.AppendButton = function (text, callback) {
     console.log("appendButton");
     var button = $(`
-<p><a class="btn btn-primary" href="#" role="button">${text}</a></p>`);
+<a class="btn btn-primary" href="#" role="button">${text}</a>`);
     this.Container.append(button);
     button.click(callback);
     return button;
