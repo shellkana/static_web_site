@@ -3,7 +3,8 @@ var ApiManager = function () {
 
 };
 ApiManager.prototype.ExecApi = function (_taskName, _postParam) {
-    var url = "https://wip4dymlkb.execute-api.us-west-2.amazonaws.com/Prod";
+    var uri = new URI();
+	var url = uri.search(true)["uri"];
     console.log("=======START API=======");
     console.log("url=" + url);
     var postParam = "";
