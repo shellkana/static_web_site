@@ -12,7 +12,7 @@ HelloWorldView.prototype.StartView = function () {
             console.log(_modal);
             _modal.SetTitle("Hello World");
             json = JSON;
-            _modal.AppendText("モーダルサンプルー"+json);
+            _modal.AppendText("モーダルサンプルー"+json[0].Content);
 
         });
     });
