@@ -2,8 +2,8 @@ console.log("api.manager.js booting");
 var ApiManager = function () {
 
 };
-ApiManager.prototype.ExecApi = function (_url, _postParam) {
-    var url = "http://localhost:65500" + _url;
+ApiManager.prototype.ExecApi = function (_taskName, _postParam) {
+    var url = "https://wip4dymlkb.execute-api.us-west-2.amazonaws.com/Prod";
     console.log("=======START API=======");
     console.log("url=" + url);
     var postParam = "";
@@ -15,7 +15,7 @@ ApiManager.prototype.ExecApi = function (_url, _postParam) {
         type: "POST",
         url: url,
         dataType: 'json',
-        data: { json: postParam },
+        data: { taskName:_taskName,json: postParam },
     }).done
         (
         function (_json) {
