@@ -22,5 +22,6 @@ HelloWorldView.prototype.StartView = function () {
     json.forEach(element => {
         li.Append($("<li>" + element.Content + "</li>"));
     });
+    this.Container.Append(li);
 };
 viewManager.ChangeView(HelloWorldView);
