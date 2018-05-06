@@ -7,15 +7,16 @@ inherits(HelloWorldView, ViewBase);
 HelloWorldView.prototype.StartView = function () {
     ViewBase.prototype.StartView.call(this);
     var _this = this;
-    this.AppendInput("header","text","help");
+    var input = this.AppendInput("header", "text", "help");
     this.AppendButton("Hello! World!", function () {
         modalManager.OpenModal(function (_modal) {
             console.log(_modal);
             _modal.SetTitle("Hello World");
             json = JSON;
-            _modal.AppendText("モーダルサンプルー"+json[0].Content);
-
+            _modal.AppendText("モーダルサンプルー" + json[0].Content);
         });
+        console.log(input.val());
+        apiManager.ExecApi("AddComment", { "Content": input.val() });
     });
 
 };
