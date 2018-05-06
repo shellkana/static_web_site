@@ -4,7 +4,7 @@ var ApiManager = function () {
 };
 ApiManager.prototype.ExecApi = function (_taskName, _postParam) {
     var uri = new URI();
-	var url = uri.search(true)["uri"];
+    var url = uri.search(true)["uri"];
     console.log("=======START API=======");
     console.log("url=" + url);
     var postParam = "";
@@ -16,7 +16,7 @@ ApiManager.prototype.ExecApi = function (_taskName, _postParam) {
         type: "POST",
         url: url,
         dataType: 'json',
-        data: JSON.stringify({ TaskName:_taskName , json:postParam}),
+        data: JSON.stringify({ TaskName: _taskName, JsonData: postParam }),
     }).done
         (
         function (_json) {
