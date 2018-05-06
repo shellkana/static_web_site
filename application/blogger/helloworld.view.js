@@ -20,8 +20,8 @@ HelloWorldView.prototype.StartView = function () {
     var json = JSON;
     var li = $("<ul></ul>");
     json.forEach(element => {
-        li.Append($("<li>" + element.Content + "</li>"));
+        li.append($("<li>" + element.Content + "</li>"));
     });
-    this.Container.Append(li);
+    this.Container.append(li);
 };
 viewManager.ChangeView(HelloWorldView);
