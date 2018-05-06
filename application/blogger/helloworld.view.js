@@ -12,12 +12,15 @@ HelloWorldView.prototype.StartView = function () {
         modalManager.OpenModal(function (_modal) {
             console.log(_modal);
             _modal.SetTitle("Hello World");
-            json = JSON;
-            _modal.AppendText("モーダルサンプルー" + json[0].Content);
+            _modal.AppendText("モーダルサンプルー");
         });
         console.log(input.val());
         apiManager.ExecApi("AddComment", { "Content": input.val() });
     });
-
+    var json = JSON;
+    var li = $("<ul></ul>");
+    json.forEach(element => {
+        li.Append($("<li>" + element.Content + "</li>"));
+    });
 };
 viewManager.ChangeView(HelloWorldView);
