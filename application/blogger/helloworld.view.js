@@ -7,6 +7,7 @@ inherits(HelloWorldView, ViewBase);
 HelloWorldView.prototype.StartView = function () {
     ViewBase.prototype.StartView.call(this);
     var _this = this;
+    this.AppendInput("header","text","help");
     this.AppendButton("Hello! World!", function () {
         modalManager.OpenModal(function (_modal) {
             console.log(_modal);
