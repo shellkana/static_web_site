@@ -11,16 +11,20 @@ IndexView.prototype.StartView = function () {
     var ul = $("<ul></ul>");
     this.Container.append(ul);
     this.Ul = ul;
-    this.UpdateUl(json);
     var uri = new URI();
     var project = uri.search(true)["project"];
     console.log(project);
     console.log(json);
+    if (json.includes(project)) {
+        apiManager.ExecApi(project + "/LoadIndex");
+    } else {
+        this.UpdateUl(json);
+    }
 };
 IndexView.prototype.UpdateUl = function (_json) {
     this.Ul.empty();
     _json.forEach(element => {
-        this.Ul.append($("<li>" + element + "</li>"));
+        this.Ul.append($("<li><a href='" + location.href + "&project=" + element + "'>" + element + "</a></li>"));
     });
 
 };
