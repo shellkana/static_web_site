@@ -139,7 +139,7 @@ ViewBase.prototype.AppendInlineInputAndButton = function (_callback) {
     var result = $(`
     <form class="form-inline">
 
-    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Jane Doe">
+    <input type="text" class="form-control mb-8 mr-sm-8" placeholder="Jane Doe">
       
     <button type="submit" class="btn btn-primary mb-2">Submit</button>
     </form>
