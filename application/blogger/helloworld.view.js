@@ -21,7 +21,7 @@ HelloWorldView.prototype.StartView = function () {
     });
     input.keypress(function (e) {
         if (input.val() && e.which == 13) {
-            apiManager.ExecApi("AddComment", { "Content": _input.val() });
+            apiManager.ExecApi("AddComment", { "Content": input.val() });
             input.val("");
         }
     });
