@@ -16,12 +16,12 @@ HelloWorldView.prototype.StartView = function () {
     });
     var input = this.AppendInlineInputAndButton(function (_input) {
         console.log(_input.val());
-        apiManager.ExecApi("AddComment", { "Content": _input.val() });
+        apiManager.ExecApi("sample/AddComment", { "Content": _input.val() });
         _input.val("");
     });
     input.keypress(function (e) {
         if (input.val() && e.which == 13) {
-            apiManager.ExecApi("AddComment", { "Content": input.val() });
+            apiManager.ExecApi("sample/AddComment", { "Content": input.val() });
             input.val("");
         }
     });
