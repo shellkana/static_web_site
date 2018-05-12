@@ -14,9 +14,8 @@ HelloWorldView.prototype.StartView = function () {
             _modal.AppendText("This is sample modal");
         });
     });
-    var input = this.AppendInput("header", "text", "help");
-    this.AppendButton("submit!", function () {
-        console.log(input.val());
+    var input = this.AppendInlineInputAndButton(function (_input) {
+        console.log(_input.val());
         apiManager.ExecApi("AddComment", { "Content": input.val() });
     });
     var json = JSON;

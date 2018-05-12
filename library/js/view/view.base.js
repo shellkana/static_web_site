@@ -135,3 +135,16 @@ ViewBase.prototype.AppendSignIn = function (_callback) {
     this.Container.append(signIn);
     return signIn;
 };
+ViewBase.prototype.AppendInlineInputAndButton = function (_callback) {
+    var result = $(`
+    <form class="form-inline">
+
+    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Jane Doe">
+      
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </form>
+    `);
+    result.find("button").click(function () { _callback(result.find("input")) });
+    this.Container.append(result);
+    return result.find("input");
+}
