@@ -137,7 +137,6 @@ ViewBase.prototype.AppendSignIn = function (_callback) {
 };
 ViewBase.prototype.AppendInlineInputAndButton = function (_callback) {
     var result = $(`
-    <div class="form-inline">
       <div class="form-group row">
         <div class="col-md-6">
           <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Jane Doe">
@@ -146,7 +145,6 @@ ViewBase.prototype.AppendInlineInputAndButton = function (_callback) {
           <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </div>
       </div>
-    </div>
     `);
     result.find("button").click(function () { _callback(result.find("input")) });
     this.Container.append(result);
