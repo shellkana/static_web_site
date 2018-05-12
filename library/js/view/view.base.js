@@ -138,7 +138,7 @@ ViewBase.prototype.AppendSignIn = function (_callback) {
 ViewBase.prototype.AppendInlineInputAndButton = function (_callback) {
     var result = $(`
       <div class="form-group row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Jane Doe">
         </div>
         <div class="col-md-2">
