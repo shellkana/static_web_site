@@ -11,7 +11,7 @@ ViewBase.prototype.StartView = function () {
 ViewBase.prototype.AppendButton = function (text, callback) {
     console.log("appendButton");
     var button = $(`
-<a class="btn btn-primary" href="#" role="button">${text}</a>`);
+<a class="btn btn-primary mb-2" href="#" role="button">${text}</a>`);
     this.Container.append(button);
     button.click(callback);
     return button;
@@ -139,10 +139,10 @@ ViewBase.prototype.AppendInlineInputAndButton = function (_callback) {
     var result = $(`
       <div class="form-group row">
         <div class="col-md-8">
-          <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Jane Doe">
+          <input type="text" class="form-control mr-sm-2" placeholder="Jane Doe">
         </div>
         <div class="col-md-2">
-          <button type="submit" class="btn btn-primary mb-2">Submit</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
     `);
