@@ -1,4 +1,4 @@
-var json = JSON;
+var json = _JSON;
 console.log(json);
 var MyPageView = function () {
     ViewBase.call(this);
