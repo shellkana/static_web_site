@@ -8,6 +8,6 @@ var MyPageView = function () {
 inherits(MyPageView, ViewBase);
 MyPageView.prototype.StartView = function () {
     ViewBase.prototype.StartView.call(this);
-    
+    this.Container.append($("<p>" + json.stringify() + "</p>"));
 };
 viewManager.ChangeView(MyPageView);

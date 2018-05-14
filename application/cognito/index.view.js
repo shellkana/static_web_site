@@ -10,10 +10,13 @@ IndexView.prototype.StartView = function () {
     ViewBase.prototype.StartView.call(this);
     var _this = this;
     var uri = new URI();
-    this.AppendInput("Email", "xxxx@xxx.com", "メアドを入れるんやで");
-    this.AppendInput("Password", "Xxxxx", "6文字以上頼んます");
+    var email = this.AppendInput("Email", "xxxx@xxx.com", "メアドを入れるんやで");
+    var password = this.AppendInput("Password", "Xxxxx", "6文字以上頼んます");
     this.AppendButton("SignIn", function () {
-
+        apiManager.ExecApi("cognito/SignIn", {
+            Email: email.val(),
+            Password: password.val()
+        });
     });
     this.AppendButton("SignUp", function () {
         viewManager.ChangeView(SignUpView);
