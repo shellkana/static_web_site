@@ -13,7 +13,7 @@ ConfirmView.prototype.StartView = function () {
     var code = this.AppendInput("認証コード", "xxxxxx", "メアドに届いたコードを入力や！");
     this.AppendButton("認証する", function () {
         apiManager.ExecApi("cognito/Confirm", {
-            Name: tempData.cognitoUserName,
+            Name: json.UserSub,
             Password: code.val()
         })
     });
