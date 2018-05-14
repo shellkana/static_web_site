@@ -1,4 +1,5 @@
 var json = JSON;
+var tempData = {};
 var IndexView = function () {
     ViewBase.call(this);
     this.Title = "Index";
@@ -31,6 +32,7 @@ SignUpView.prototype.StartView = function () {
     var emailInput = this.AppendInput("Email", "xxxx@xxx.com", "メアドを入れるんやで");
     var passwordInput = this.AppendInput("Password", "Xxxxx", "6文字以上頼んます");
     this.AppendButton("SignUp", function () {
+        tempData.cognitoUserName = nameInput.val();
         apiManager.ExecApi("cognito/SignUp", {
             Name: nameInput.val(),
             Password: passwordInput.val(),
