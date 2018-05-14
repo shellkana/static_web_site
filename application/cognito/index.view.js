@@ -31,7 +31,7 @@ SignUpView.prototype.StartView = function () {
     var emailInput = this.AppendInput("Email", "xxxx@xxx.com", "メアドを入れるんやで");
     var passwordInput = this.AppendInput("Password", "Xxxxx", "6文字以上頼んます");
     this.AppendButton("SignUp", function () {
-        apiManager.ExecApi("cognitoSignUp", {
+        apiManager.ExecApi("cognito/SignUp", {
             Name: nameInput.val(),
             Password: passwordInput.val(),
             Email: emailInput.val()
