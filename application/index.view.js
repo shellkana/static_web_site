@@ -28,10 +28,11 @@ IndexView.prototype.StartView = function () {
         {
             console.log(reader.result);
             var array = reader.result.split("\\n");
+            var csvArray = [];
             array.forEach(element=>{
-                element = element.split(",");
+                csvArray.push(element.split(","));
             });
-            console.log(array);
+            console.log(csvArray);
         };
     });
     this.Container.append(file);
