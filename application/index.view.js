@@ -43,14 +43,24 @@ IndexView.prototype.StartView = function () {
                 "overflow-y": "auto"
             });
             csvArray[0].forEach(element=>{
-                theadtr.append($("<td>"+element+"</td>"));
+                var td = $("<td>"+element+"</td>");
+                td.css({
+                    "width":(100/csvArray[0].length-1)+"%",
+                    "float":"left"
+                })
+                theadtr.append(td);
             });
             thead.append(theadtr);
             table.append(thead);
             csvArray.forEach(element=>{
                 var tr = $("<tr></tr>");
                 element.forEach(element2=>{
-                    tr.append($("<td>"+element2+"</td>"));
+                    var td = $("<td>"+element2+"</td>");
+                    td.css({
+                        "width":(100/csvArray[0].length-1)+"%",
+                        "float":"left"
+                    })
+                    tr.append(td);
                 });
                 tbody.append(tr);
             });
