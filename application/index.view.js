@@ -20,6 +20,12 @@ IndexView.prototype.StartView = function () {
     } else {
         this.UpdateUl(json);
     }
+    var file = $(`<label class="custom-file">
+                    <input type="file" id="file" class="custom-file-input">
+                    <span class="custom-file-control"></span>
+                  </label>`);
+    this.Container.append(file);
+    
 };
 IndexView.prototype.UpdateUl = function (_json) {
     this.Ul.empty();
