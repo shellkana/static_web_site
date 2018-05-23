@@ -20,8 +20,10 @@ IndexView.prototype.StartView = function () {
     } else {
         this.UpdateUl(json);
     }
+    var table = $('<table class="table table-bordered"></table>');
     var file = $(`<input type="file" class="form-control-file" id="exampleFormControlFile1">`);
     file.on("change",function(_e){
+        table.empty();
         var reader = new FileReader();
         reader.readAsText(_e.target.files[0]);
         reader.onload = function ()
@@ -33,10 +35,13 @@ IndexView.prototype.StartView = function () {
                 csvArray.push(element.split(","));
             });
             console.log(csvArray);
-            var table = $('<table class="table table-bordered"></table>');
             var thead = $("<thead></thead>");
             var theadtr = $("<tr></tr>");
             var tbody = $("<tbody></tbody>");
+            tbody.css({
+                "height":"1000px",
+                "overflow-y": "auto"
+            });
             csvArray[0].forEach(element=>{
                 theadtr.append($("<td>"+element+"</td>"));
             });
