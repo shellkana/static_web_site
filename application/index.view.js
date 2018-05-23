@@ -20,7 +20,7 @@ IndexView.prototype.StartView = function () {
     } else {
         this.UpdateUl(json);
     }
-    var table = $('<table class="table table-bordered"></table>');
+    var table = $('<table class="sticky_table></table>');
     var file = $(`<input type="file" class="form-control-file" id="exampleFormControlFile1">`);
     file.on("change",function(_e){
         table.empty();
@@ -38,16 +38,13 @@ IndexView.prototype.StartView = function () {
             var thead = $("<thead></thead>");
             var theadtr = $("<tr></tr>");
             var tbody = $("<tbody></tbody>");
-            tbody.css({
-                "height":"1000px",
-                "overflow-y": "auto"
-            });
-            csvArray[0].forEach(element=>{
-                var td = $("<td>"+element+"</td>");
-                td.css({
-                    "width":(100/csvArray[0].length-1)+"%",
-                    "float":"left"
-                });
+            csvArray[0].forEach((element,index)=>{
+                var td;
+                if(index!=0){
+                    td = $("<td>"+element+"</td>");
+                }else{
+                    td = $("<td class='blank'>"+element+"</td>")
+                }
                 theadtr.append(td);
             });
             thead.append(theadtr);
@@ -56,10 +53,6 @@ IndexView.prototype.StartView = function () {
                 var tr = $("<tr></tr>");
                 element.forEach(element2=>{
                     var td = $("<td>"+element2+"</td>");
-                    td.css({
-                        "width":(100/csvArray[0].length-1)+"%",
-                        "float":"left"
-                    });
                     tr.append(td);
                 });
                 tbody.append(tr);

@@ -5,10 +5,46 @@ body {
   padding: 3rem 1.5rem;
   text-align: center;
 }
-thead, tbody, tr, td, th { display: block; }
-tr:after {
-    content: ' ';
+/* sticky table */
+.sticky_table {
+  display: block;
+  overflow: hidden;
+  width: calc(100vw - 3.0rem); /* fixed value */
+  height: calc(100vh - 7.0rem); /* fixed value */
+  margin: 0 auto;
+  table {
     display: block;
-    visibility: hidden;
-    clear: both;
+    position: relative;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 0;
+    thead, tbody {
+      display: block;
+      width: max-content;
+    }
+    th, td {
+      display: inline-block;
+      min-width: 8.0rem; /* fixed value */
+      background: #fff;
+      font-size: 1.0rem;
+    }
+    tbody th {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+    }
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    thead th.blank {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 3;
+    }
+  }
 }
