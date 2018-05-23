@@ -27,6 +27,11 @@ IndexView.prototype.StartView = function () {
         reader.onload = function ()
         {
             console.log(reader.result);
+            var array = reader.result.split("\n");
+            array.forEach(element=>{
+                element = element.split(",");
+            });
+            console.log(array);
         };
     });
     this.Container.append(file);
