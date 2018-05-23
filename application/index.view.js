@@ -33,7 +33,7 @@ IndexView.prototype.StartView = function () {
                 csvArray.push(element.split(","));
             });
             console.log(csvArray);
-            var table = $("<table></table>");
+            var table = $('<table class="table table-bordered"></table>');
             var thead = $("<thead></thead>");
             var theadtr = $("<tr></tr>");
             var tbody = $("<tbody></tbody>");
