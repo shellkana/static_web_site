@@ -20,7 +20,7 @@ IndexView.prototype.StartView = function () {
     } else {
         this.UpdateUl(json);
     }
-    var table = $('<table class="sticky_table></table>');
+    var table = $('<table class="sticky_table"></table>');
     var file = $(`<input type="file" class="form-control-file" id="exampleFormControlFile1">`);
     file.on("change",function(_e){
         table.empty();
