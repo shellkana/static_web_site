@@ -47,7 +47,7 @@ IndexView.prototype.StartView = function () {
                 td.css({
                     "width":(100/csvArray[0].length-1)+"%",
                     "float":"left"
-                })
+                });
                 theadtr.append(td);
             });
             thead.append(theadtr);
@@ -59,7 +59,7 @@ IndexView.prototype.StartView = function () {
                     td.css({
                         "width":(100/csvArray[0].length-1)+"%",
                         "float":"left"
-                    })
+                    });
                     tr.append(td);
                 });
                 tbody.append(tr);
