@@ -41,7 +41,7 @@ IndexView.prototype.StartView = function () {
                 theadtr.append($("<td>"+element+"</td>"));
             });
             thead.append(theadtr);
-            table.append(thad);
+            table.append(thead);
             csvArray.forEach(element=>{
                 var tr = $("<tr></tr>");
                 element.forEach(element2=>{
