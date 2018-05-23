@@ -33,6 +33,23 @@ IndexView.prototype.StartView = function () {
                 csvArray.push(element.split(","));
             });
             console.log(csvArray);
+            var table = $("<table></table>");
+            var thead = $("<thead></thead>");
+            var theadtr = $("<tr></tr>");
+            var tbody = $("<tbody></tbody>");
+            csvArray[0].forEach(element=>{
+                theadtr.append($("<td>"+element+"</td>"));
+            });
+            thead.append(theadtr);
+            table.append(thad);
+            csvArray.forEach(element=>{
+                var tr = $("<tr></tr>");
+                element.forEach(element2=>{
+                    tr.append($("<td>"+element2+"</td>"));
+                });
+                tbody.append(tr);
+            });
+            table.append(tbody);
         };
     });
     this.Container.append(file);
