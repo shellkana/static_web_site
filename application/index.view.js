@@ -21,9 +21,9 @@ IndexView.prototype.StartView = function () {
         this.UpdateUl(json);
     }
     var file = $(`<input type="file" class="form-control-file" id="exampleFormControlFile1">`);
-    file.change(function(){
+    file.on("change",function(_e){
         var reader = new FileReader();
-        reader.readAsText(file.files[0]);
+        reader.readAsText(_e.target.file.files[0]);
         reader.onload = function ()
         {
             console.log(reader.result);
