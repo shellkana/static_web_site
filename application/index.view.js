@@ -50,6 +50,7 @@ IndexView.prototype.StartView = function () {
                 tbody.append(tr);
             });
             table.append(tbody);
+            _this.Container.append(table);
         };
     });
     this.Container.append(file);
