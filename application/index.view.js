@@ -20,12 +20,17 @@ IndexView.prototype.StartView = function () {
     } else {
         this.UpdateUl(json);
     }
-    var file = $(`<div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>`);
+    var file = $(`<input type="file" class="form-control-file" id="exampleFormControlFile1">`);
+    file.change(function(){
+        var reader = new FileReader();
+        reader.readAsText(file.files[0]);
+        reader.onload = function ()
+        {
+            console.log(reader.result);
+        };
+    });
     this.Container.append(file);
-    
+
 };
 IndexView.prototype.UpdateUl = function (_json) {
     this.Ul.empty();
