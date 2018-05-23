@@ -23,7 +23,7 @@ IndexView.prototype.StartView = function () {
     var file = $(`<input type="file" class="form-control-file" id="exampleFormControlFile1">`);
     file.on("change",function(_e){
         var reader = new FileReader();
-        reader.readAsText(_e.target.file.files[0]);
+        reader.readAsText(_e.target.files[0]);
         reader.onload = function ()
         {
             console.log(reader.result);
