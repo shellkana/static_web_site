@@ -43,7 +43,7 @@ IndexView.prototype.StartView = function () {
                 if(index!=0){
                     td = $("<td>"+element+"</td>");
                 }else{
-                    td = $("<td class='blank'>"+element+"</td>")
+                    td = $('<td class="blank">'+element+"</td>");
                 }
                 theadtr.append(td);
             });
